@@ -1450,7 +1450,10 @@ let SAFE_L=0,SAFE_R=0,ROT=false,SW=0,SH=0,SCRW=0;
 const stage=document.getElementById('stage');
 function toStage(x,y){return ROT?{x:y,y:SCRW-x}:{x,y};}
 function resize(){
-  const vv=window.visualViewport;const w=Math.round(vv&&vv.width?vv.width:innerWidth),h=Math.round(vv&&vv.height?vv.height:innerHeight);
+  const vv=window.visualViewport;let w=Math.round(vv&&vv.width?vv.width:innerWidth),h=Math.round(vv&&vv.height?vv.height:innerHeight);
+  // abierto desde la pantalla de inicio (iPhone): el alto que da Safari descuenta la barra de estado aunque el juego se pinte debajo; usamos la pantalla entera
+  const sa=navigator.standalone||(window.matchMedia&&(matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches));
+  if(sa&&screen.width&&screen.height){const a=Math.min(screen.width,screen.height),b=Math.max(screen.width,screen.height);if(h>=w){w=a;h=b;}else{w=b;h=a;}}
   // en vertical, el juego se muestra girado para verse siempre en horizontal
   ROT=h>w;SCRW=w;SW=ROT?h:w;SH=ROT?w:h;
   stage.style.width=SW+'px';stage.style.height=SH+'px';stage.style.transform=ROT?'translateX('+w+'px) rotate(90deg)':'none';
