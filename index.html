@@ -36,7 +36,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);overflow:hid
 #cv{display:block;position:absolute;left:0;top:0;image-rendering:pixelated;image-rendering:crisp-edges;background:#000}
 #pad{position:absolute;inset:0;pointer-events:none;display:none}
 body.touch #pad{display:block}
-#dpad{position:absolute;left:env(safe-area-inset-left,0px);bottom:calc(4*var(--u));width:min(calc(36*var(--u)),150px);height:min(calc(36*var(--u)),150px);opacity:.62}
+#dpad{position:absolute;left:6px;bottom:calc(4*var(--u));width:min(calc(36*var(--u)),150px);height:min(calc(36*var(--u)),150px);opacity:.62}
 #dpad .arm{position:absolute;background:linear-gradient(180deg,var(--padhi),var(--pad) 40%,var(--padlo));border-radius:7px;
   box-shadow:0 3px 0 #000,inset 0 1px 0 rgba(255,255,255,.18)}
 #dpad .h{left:0;top:33.3%;width:100%;height:33.4%}
@@ -48,7 +48,7 @@ body.touch #pad{display:block}
 #dpad .lf{top:calc(50% - 6px);left:7%;border-right-color:#9a98a8;border-left:0}
 #dpad .rt{top:calc(50% - 6px);right:7%;border-left-color:#9a98a8;border-right:0}
 #dpad.L .lf,#dpad.R .rt,#dpad.U .up,#dpad.D .dn{opacity:1;filter:brightness(1.8)}
-#ab{position:absolute;right:env(safe-area-inset-right,0px);bottom:calc(5*var(--u));display:flex;gap:min(calc(4*var(--u)),18px);
+#ab{position:absolute;right:0;bottom:calc(5*var(--u));display:flex;gap:min(calc(4*var(--u)),18px);
   padding:min(calc(2.4*var(--u)),10px) 0 min(calc(5*var(--u)),22px) min(calc(3*var(--u)),12px);background:var(--plate);border-radius:12px 0 0 12px;opacity:.66;
   box-shadow:inset 0 0 0 2px #2b2a31}
 .btn{position:relative;width:min(calc(19*var(--u)),76px);height:min(calc(19*var(--u)),76px);border-radius:50%;
